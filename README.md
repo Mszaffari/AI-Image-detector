@@ -1,117 +1,125 @@
-# Deep-fake-image-detector Detector App
+# AI Image Detector
 
-A Streamlit-based web application that detects AI-generated (deepfake) images using various deep learning models. The app uses state-of-the-art architectures like EfficientNet and provides real-time analysis of uploaded images.
+A sophisticated web application that analyzes and detects AI-generated images using advanced deep learning models. Built with Streamlit for an intuitive user experience, this tool leverages state-of-the-art neural network architectures to provide accurate image authenticity analysis.
 
-## Features
+## ✨ Features
 
-- Image deepfake detection
-- Support for multiple image formats (JPG, JPEG, PNG)
-- User-friendly interface built with Streamlit
-- Real-time analysis and results display
-- Pre-trained models for accurate detection
-- Color-coded results for easy interpretation
+- **AI-Generated Image Detection** - Identify artificially created or synthesized images
+- **Multiple Format Support** - Works with JPG, JPEG, and PNG images
+- **Real-Time Analysis** - Instant results with detailed confidence scores
+- **Intuitive Interface** - Clean, user-friendly web-based interface
+- **Advanced Models** - Powered by EfficientNet and other cutting-edge architectures
+- **Clear Visualization** - Color-coded results for quick interpretation
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- Python
-- Streamlit
+- **Python** - Core programming language
+- **Streamlit** - Web application framework
+- **PyTorch** - Deep learning framework
+- **PIL** - Image processing
+- **BlazeFace** - Lightweight face detection
+- **EfficientNet** - Efficient neural network architecture
+
+## 📋 Prerequisites
+
+Ensure you have the following installed:
+
+- Python 3.7 or higher
 - PyTorch
-- PIL (Python Imaging Library)
-- BlazeFace (for face detection)
-- EfficientNet (for classification)
-
-## Prerequisites
-
-Before running the application, make sure you have the following installed:
-
-```bash
-- Python 3.7+
-- PyTorch
 - Streamlit
-- Pillow
-- scipy
+- Pillow (PIL)
+- SciPy
+
+## 🚀 Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd AI-Image-detector
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Download model weights:**
+   - BlazeFace weights: `blazeface/blazeface.pth`
+   - Anchor file: `blazeface/anchors.npy`
+
+## 💻 Usage
+
+1. **Start the application:**
+   ```bash
+   streamlit run App.py
+   ```
+
+2. **Open in browser:**
+   Navigate to `http://localhost:8501`
+
+3. **Upload and analyze:**
+   - Select an image file
+   - Click "Analyze Image"
+   - View instant results
+
+4. **Results interpretation:**
+   - 🟢 **Green** - Authentic/Natural image
+   - 🔴 **Red** - AI-Generated image
+
+## 📁 Project Structure
+
+```
+├── App.py                  # Main application entry point
+├── api.py                  # API and image processing
+├── image.py                # Image analysis and inference
+├── blazeface/              # BlazeFace model files
+└── architectures/          # Neural network definitions
 ```
 
-## Installation
+## 🧠 Supported Models
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd ai-generated-detector
-```
+The application utilizes several advanced architectures:
 
-2. Install the required dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-3. Download the required model weights:
-   - Place the BlazeFace weights in `blazeface/blazeface.pth`
-   - Place the anchor file in `blazeface/anchors.npy`
-
-## Usage
-
-1. Start the Streamlit app:
-```bash
-streamlit run App.py
-```
-
-2. Open your web browser and navigate to the provided local URL (typically `http://localhost:8501`)
-
-3. Upload an image using the file uploader
-
-4. Click the "Check for Deepfake" button to analyze the image
-
-5. View the results, which will be displayed with color-coding:
-   - Green: Real image
-   - Red: Fake/AI-generated image
-
-## Project Structure
-
-- `App.py`: Main Streamlit application file
-- `api.py`: API handling and image processing functions
-- `image.py`: Core image analysis and model inference logic
-- `blazeface/`: Directory containing BlazeFace model files
-- `architectures/`: Neural network architecture definitions
-
-## Supported Models
-
-The application supports multiple architectures:
 - EfficientNetB4
 - EfficientNetB4ST
 - EfficientNetAutoAttB4
 - EfficientNetAutoAttB4ST
 - Xception
 
-## Datasets
+## 📊 Training Datasets
 
-The models can be trained on:
+Models can be trained on standard benchmarks:
 - DFDC (Deep Fake Detection Challenge)
 - FFPP (FaceForensics++)
 
-## Error Handling
+## ⚙️ Configuration
 
-The application includes comprehensive error handling for:
-- Invalid file types
+- **Default confidence threshold:** 0.5
+- **Temporary storage:** `uploads/` directory
+- **Processing time:** Varies based on image size and hardware
+
+## 🛡️ Error Handling
+
+The application includes robust error handling for:
+- Invalid file formats
 - Processing errors
 - Model inference issues
 - File system operations
 
-## Notes
+## 🤝 Contributing
 
-- The application creates temporary files in an 'uploads' directory during processing
-- Face detection is performed using BlazeFace before deepfake analysis
-- The default confidence threshold is set to 0.5
-- Processing time may vary depending on the image size and hardware capabilities
-
-## Contributing
+We welcome contributions! To get started:
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit changes: `git commit -m 'Add your feature'`
+4. Push to branch: `git push origin feature/your-feature`
 5. Open a Pull Request
 
-## License
+## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+**Note:** This tool is designed for research and educational purposes. Always verify results and use responsibly.
